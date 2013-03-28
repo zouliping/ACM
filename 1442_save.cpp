@@ -37,6 +37,11 @@ void saveNum(int jl)
 	cout<<endl;*/
 }
 
+void sortArray(int array1[d],int array2[n])
+{
+	
+}
+
 void check(int index,int d,int jl)
 {
 	int i,k;
