@@ -40,14 +40,13 @@ int main()
 
 		for(i=0;i<num;i++)
 			cin>>seq[i];
-		for(i=0;i<num-1;i++)
-			dif[i] = abs(seq[i]-seq[i+1]);
+		for(i=1;i<=num-1;i++)
+			dif[i-1] = abs(seq[i]-seq[i-1]);
 
 		qsort(dif,0,num-1);
 
 		for(i=0;i<num-1;i++)
 		{
-			cout<<dif[i]<<" ";
 			if(dif[i]!=(num-1-i))
 			{
 				flag = false;
