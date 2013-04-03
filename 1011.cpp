@@ -28,7 +28,10 @@ int main()
 		columns = (60 - maxLength)/(maxLength + 2) + 1;
 		fileSize = filenames.size();
 		if(columns > fileSize)
+		{
 			rows = 1;
+			columns = fileSize;
+		}
 		else
 			rows = (fileSize + 1) / columns;
 
