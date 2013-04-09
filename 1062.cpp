@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -11,21 +10,27 @@ int main(void)
 		if(num == 0)
 			exit(0);
 
-		int i,j,d;
-		vector<int> v;
-		for(i=0;i<num;i++)
-		{
-			cin>>d;
-			v.push_back(d);
-		}
+		int i,j;
+		int Min,Max;
+		int d[num];
+		for(i = 0;i < num;i++)
+			cin>>d[i];
 
-		for(i=0;i<num;i++)
+		sort(d,d+num);
+		Min = d[num - 1];
+		for(i = 0;i < num - 1;i++)
+			Min = Min * d[num-i-2] + 1;
+		for(i = 0;i<num - 1;i++)
 		{
-			for(j=i+1;j<num;j++)
+			d[i+1] = d[i] * d[i+1] + 1;
+			for(j = i + 1;j < num - 1;j++)
 			{
-
+				if(d[j] > d[j+1])
+					swap(d[j],d[j+1]);
 			}
 		}
+		Max = d[num-1];
+		cout<<Max - Min<<endl;
 	}
 	return 0;
 }

@@ -4,7 +4,7 @@
 using namespace std;
 
 string months[19] = {"pop", "no", "zip", "zotz", "tzec", "xul", "yoxkin", "mol", "chen", "yax", "zac", "ceh", "mac", "kankin", "muan", "pax", "koyab", "cumhu","uayet"};
-string days[20] = {"imix", "ik", "akbal", "kan", "chicchan", "cimi", "manik", "lamat", "muluk", "ok", "chuen", "eb", "ben", "ix", "mem", "cib", "caban", "eznab", "canac?", "ahau"};
+string days[20] = {"imix", "ik", "akbal", "kan", "chicchan", "cimi", "manik", "lamat", "muluk", "ok", "chuen", "eb", "ben", "ix", "mem", "cib", "caban", "eznab", "canac", "ahau"};
 
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
 	while(num--)
 	{
 		int i,day,year;
-		int dayCount = 0;
+		long dayCount = 0;
 		string monthName;
 		cin>>day;
 		cin.get();
@@ -31,10 +31,7 @@ int main(void)
 		}
 			
 		int tYear,tMonth,tDay;
-		if(dayCount % 260 != 0)
-			tYear = dayCount / 260 - 1;
-		else
-			tYear = dayCount / 260;
+		tYear = dayCount / 260;
 		dayCount %= 260;
 		tMonth = dayCount % 13 + 1;
 		tDay = dayCount % 20;

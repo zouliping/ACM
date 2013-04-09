@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cstring>
 
-const int MAX = 10000;
+const int MAX = 10240;
 
 void parse(char* str,int* e)
 {
@@ -12,7 +12,6 @@ void parse(char* str,int* e)
 		sscanf(str,"%2X",&e[i]);
 		str += 2;
 	}
-	
 }
 
 int main()
