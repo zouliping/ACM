@@ -25,11 +25,12 @@ int main(void)
 			cout<<digit[i]<<endl;
 
 		int index = 0,j = 0;
-		int save;
+		int save = 0;
 		bool isRepeated = true;
 		bool flag = true;
+		int digitSize = digit.size();
 
-		for(i = 1;i < digit.size();i++)
+		for(i = 1;i < digitSize;i++)
 		{
 			if(digit[index] == digit[i])
 			{
@@ -50,7 +51,10 @@ int main(void)
 							break;
 						}
 						else
+						{
 							count++;
+							isRepeated = true;
+						}
 					}
 				}
 				else
@@ -64,6 +68,8 @@ int main(void)
 							index++;
 							break;
 						}
+						else
+							isRepeated = true;
 					}
 				}	
 
@@ -72,6 +78,8 @@ int main(void)
 					i = j + tmp - 1;
 					save = count;
 				}
+				if(i > digitSize - digitSize % save)
+					break;
 			}
 		}
 

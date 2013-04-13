@@ -12,6 +12,6 @@ int main(void)
 	long step,mod;
 	while(cin>>step>>mod)
 	{
-
+		
 	}
 }
